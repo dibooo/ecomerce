@@ -9,7 +9,7 @@ const getPopularProducts = async (req, res) => {
         for (let index = 0; index < products.length; index++) {
             
             var fs = require('fs');
-            var files = await fs.readdirSync(__dirname+'../uploads/'+products[index]._id);
+            var files = await fs.readdirSync(__dirname+'/../uploads/'+products[index]._id);
             console.log(files);
             newProducts.push({...products[index]._doc,img:files[0]})
         }
